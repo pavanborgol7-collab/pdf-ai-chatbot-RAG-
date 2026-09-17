@@ -5,52 +5,55 @@ An AI-powered PDF chatbot that uses Retrieval-Augmented Generation (RAG) to answ
 ## 🚀 Features
 
 - 📄 Extracts text from PDF documents
-- ✂️ Splits documents into smaller chunks
-- 🧠 Creates embeddings for document chunks
-- 🔎 Searches for relevant information
-- 🤖 Uses Ollama for local LLM inference
-- 💬 Answers questions based on the uploaded PDF
-- 🔒 Runs the LLM locally using Ollama
+- ✂️ Splits PDF text into smaller chunks
+- 🧠 Creates document embeddings
+- 🔎 Searches for relevant document information
+- 🦙 Uses Ollama for local AI inference
+- 💬 Answers questions based on PDF content
 
-## 🧠 How It Works
+## 🧠 Models Used
 
-PDF
- ↓
-Text Extraction
- ↓
-Text Chunking
- ↓
-Embeddings
- ↓
-Document Search
- ↓
-Relevant Context
- ↓
-Ollama LLM
- ↓
-AI Answer
+### Chat / Generation Model
+`llama3.2:3b`
 
-## 🛠️ Technologies Used
+### Embedding Model
+`nomic-embed-text`
 
-- Python
-- RAG (Retrieval-Augmented Generation)
-- Ollama
-- PyPDF
-- Embeddings
-- Vector/Document Search
-- LangChain (if used in the project)
+Both models are run locally using Ollama.
 
-## 📂 Project Structure
+## 🔄 RAG Pipeline
 
 ```text
-pdf-ai-chatbot-RAG/
-│
-├── app.py
-├── ask_pdf.py
-├── chunk_pdf.py
-├── create_embeddings.py
-├── extract_pdf.py
-├── search_documents.py
-├── requirements.txt
-├── .gitignore
-└── README.md
+PDF Document
+     ↓
+Text Extraction
+     ↓
+Text Chunking
+     ↓
+Document Embeddings
+     ↓
+Similarity / Document Search
+     ↓
+Relevant Context
+     ↓
+Ollama LLM
+     ↓
+AI Answer
+
+git clone https://github.com/pavanborgol7-collab/pdf-ai-chatbot-RAG.git
+cd pdf-ai-chatbot-RAG
+
+pip install -r requirements.txt
+
+ollama pull llama3.2:3b
+ollama pull nomic-embed-text
+
+streamlit run app.py
+
+
+
+
+
+
+
+
